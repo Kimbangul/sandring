@@ -235,7 +235,7 @@
     }
 
     .section{
-        padding-top: 55px;
+        /* padding-top: 55px; */
     }
 
     ::selection{
@@ -264,7 +264,7 @@
 
     @media(max-width: 768px){
         .section{
-            padding-top:40px;
+            /* padding-top:40px; */
         }
     }
     
