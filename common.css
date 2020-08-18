@@ -47,6 +47,17 @@
     }
 
 }
+@keyframes direction-arrow-animation{
+    from{
+        margin-bottom: 0;
+        opacity: 0.7;
+    }
+    to{
+        margin-bottom: 2rem;
+        opacity: 0.2;
+    }
+}
+
             
             
 
@@ -493,6 +504,26 @@
         opacity: 0.8;
         transition: opacity 0.5s;
     }
+
+    #main .direction-icon {
+        position: absolute;
+        bottom: 3%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+        #main  .direction-icon > svg{
+            font-size: 4rem;
+            opacity: 0.5;
+            margin-top: 0;
+        
+            animation-name: direction-arrow-animation;
+            animation-duration: 1.3s;
+            animation-iteration-count: infinite;
+            animation-direction: reverse;
+            animation-timing-function: ease-in-out;
+        }
+        
 
     @media(max-width:1300px){
         #main .title-box > .img-box{
