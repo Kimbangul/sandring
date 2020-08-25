@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 @charset "utf-8";
 
 @font-face {
@@ -17,6 +24,15 @@
     font-style: normal;
 }
 
+@-webkit-keyframes fade-in{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
 @keyframes fade-in{
     from{
         opacity: 0;
@@ -25,27 +41,67 @@
         opacity: 1;
     }
 }
-@keyframes fade-in-up{
+@-webkit-keyframes fade-in-up{
     from{
         opacity: 0;
-        transform: translateY(30px);
+        -webkit-transform: translateY(30px);
+                transform: translateY(30px);
     }
     to{
         opacity: 1;
-        transform: translateY(0);
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
     }
+}
+@keyframes fade-in-up{
+    from{
+        opacity: 0;
+        -webkit-transform: translateY(30px);
+                transform: translateY(30px);
+    }
+    to{
+        opacity: 1;
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes fade-out-up{
+    from{
+        opacity: 1;
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+    }
+    to{
+        opacity: 0;
+        -webkit-transform: translateY(30px);
+                transform: translateY(30px);
+    }
+
 }
 
 @keyframes fade-out-up{
     from{
         opacity: 1;
-        transform: translateY(0);
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
     }
     to{
         opacity: 0;
-        transform: translateY(30px);
+        -webkit-transform: translateY(30px);
+                transform: translateY(30px);
     }
 
+}
+@-webkit-keyframes direction-arrow-animation{
+    from{
+        margin-bottom: 0;
+        opacity: 0.7;
+    }
+    to{
+        margin-bottom: 2rem;
+        opacity: 0.2;
+    }
 }
 @keyframes direction-arrow-animation{
     from{
@@ -64,7 +120,8 @@
 *{
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     text-decoration: none;
     list-style: none;
     color: inherit;
@@ -109,43 +166,63 @@
     }
     
     .flex{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     }
     
     .flex-jc-c{
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     }
     
     .flex-jc-s{
-    justify-content: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     }
     
     .flex-jc-e{
-    justify-content: flex-end;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     }
     
     .flex-jc-b{
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     }
     
     .flex-jc-a{
-    justify-content: space-around;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     }
     
     .flex-ai-c{
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     }
     
     .flex-1-0-0{
-    flex: 1 0 0;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 0px;
+            flex: 1 0 0;
     }
 
     .flex-1{
-        flex-grow: 1;
+        -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+                flex-grow: 1;
     }
 
     .flex-d-c{
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
 
     .flex-wrap{
@@ -193,6 +270,8 @@
         font-size: 2.8rem;
         letter-spacing: 3rem;
         text-align: justify;
+        -webkit-transition: font-size 0.5s;
+        -o-transition: font-size 0.5s;
         transition: font-size 0.5s;
         
     }
@@ -247,6 +326,11 @@
 
     .section{
         /* padding-top: 55px; */
+    }
+
+    ::-moz-selection{
+        background-color:rgba(0,0,0,0.5);
+        color: #fff;
     }
 
     ::selection{
@@ -310,7 +394,9 @@
     }
 
     ul.social{
-        transform: translateY(-20px);
+        -webkit-transform: translateY(-20px);
+            -ms-transform: translateY(-20px);
+                transform: translateY(-20px);
     }
 
     ul.social > li{
@@ -318,8 +404,12 @@
             height: 50px;
             background-color: rgba(229,95,29,0.7);
             opacity: 0.6;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
             margin-bottom: 10px;
+            -webkit-transition: opacity 0.3s, width 0.5s;
+            -o-transition: opacity 0.3s, width 0.5s;
             transition: opacity 0.3s, width 0.5s;
     }
 
@@ -334,9 +424,15 @@
     ul.social > li > a{
         width: 100%;
         font-size: 1.1rem;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
         padding: 10px 15px;
         letter-spacing: 0.25em;        
     }
@@ -350,7 +446,9 @@
 
     @media(max-width: 800px){
         ul.social{
-            transform: translateY(-10px);
+            -webkit-transform: translateY(-10px);
+                -ms-transform: translateY(-10px);
+                    transform: translateY(-10px);
         }
         ul.social > li{
             width: 170px;
@@ -363,7 +461,9 @@
 
     @media(max-width: 600px){
         ul.social{
-            transform: none;
+            -webkit-transform: none;
+                -ms-transform: none;
+                    transform: none;
         }
         ul.social > li{
             width: 150px;
@@ -391,6 +491,8 @@
     header > nav.menu > ul > li{
         margin: 0 15px;
         font-size: 1.6rem;
+        -webkit-transition: font-size 0.5s, margin 0.5s;
+        -o-transition: font-size 0.5s, margin 0.5s;
         transition: font-size 0.5s, margin 0.5s;
     }
 
@@ -399,6 +501,8 @@
     header > nav.menu > ul > li > a{
         padding: 0 30px;
         opacity: 0.5;
+        -webkit-transition: opacity 0.3s, padding 0.5s;
+        -o-transition: opacity 0.3s, padding 0.5s;
         transition: opacity 0.3s, padding 0.5s;
         font-weight: bold;
        
@@ -424,9 +528,15 @@
 
         header > nav.menu > ul > li{
             margin: 0 7.5px;
-            flex: 1 0 0;
+            -webkit-box-flex: 1;
+                -ms-flex: 1 0 0px;
+                    flex: 1 0 0;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
             font-size: 1.8rem;
         }
 
@@ -456,26 +566,39 @@
     #main:not(.active) .fp-tableCell{
         position: relative;
         opacity: 0;
-        animation-name: fade-out-up;
-        animation-iteration-count: 1;        
-        animation-fill-mode: both;
-        animation-timing-function: ease-in-out;
-        animation-duration: 0.7s;
+        -webkit-animation-name: fade-out-up;
+                animation-name: fade-out-up;
+        -webkit-animation-iteration-count: 1;
+                animation-iteration-count: 1;        
+        -webkit-animation-fill-mode: both;        
+                animation-fill-mode: both;
+        -webkit-animation-timing-function: ease-in-out;
+                animation-timing-function: ease-in-out;
+        -webkit-animation-duration: 0.7s;
+                animation-duration: 0.7s;
 
 
     }
 
     #main.active .fp-tableCell{
-        animation-name: fade-in;
-        animation-iteration-count: 1;
-        animation-delay: 0.5s;
-        animation-fill-mode: both;
-        animation-timing-function: ease-in-out;
-        animation-duration: 1s;
+        -webkit-animation-name: fade-in;
+                animation-name: fade-in;
+        -webkit-animation-iteration-count: 1;
+                animation-iteration-count: 1;
+        -webkit-animation-delay: 0.5s;
+                animation-delay: 0.5s;
+        -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+        -webkit-animation-timing-function: ease-in-out;
+                animation-timing-function: ease-in-out;
+        -webkit-animation-duration: 1s;
+                animation-duration: 1s;
     }
 
     #main .title-box > .img-box{
         max-width: 500px;
+        -webkit-transition: max-width 0.5s, width 0.5s;
+        -o-transition: max-width 0.5s, width 0.5s;
         transition: max-width 0.5s, width 0.5s;
 
     }
@@ -483,6 +606,8 @@
 
 
     #main .title-box > .logo img{
+        -webkit-transition: opacity 0.5s, width 0.5s;
+        -o-transition: opacity 0.5s, width 0.5s;
         transition: opacity 0.5s, width 0.5s;
     }
 
@@ -492,16 +617,22 @@
     }
 
     #main  .img-box.absolute{
-        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
         top: 40%;
         right:0;
         pointer-events: none;
         opacity: 0;
+        -webkit-transition: opacity 0s;
+        -o-transition: opacity 0s;
         transition: opacity 0s;
     }
 
     #main  .img-box.absolute.active{
         opacity: 0.8;
+        -webkit-transition: opacity 0.5s;
+        -o-transition: opacity 0.5s;
         transition: opacity 0.5s;
     }
 
@@ -509,7 +640,9 @@
         position: absolute;
         bottom: 3%;
         left: 50%;
-        transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+            -ms-transform: translateX(-50%) translateY(-50%);
+                transform: translateX(-50%) translateY(-50%);
     }
 
         #main  .direction-icon > svg{
@@ -517,11 +650,16 @@
             opacity: 0.5;
             margin-top: 0;
         
-            animation-name: direction-arrow-animation;
-            animation-duration: 1.3s;
-            animation-iteration-count: infinite;
+            -webkit-animation-name: direction-arrow-animation;
+        
+                    animation-name: direction-arrow-animation;
+            -webkit-animation-duration: 1.3s;
+                    animation-duration: 1.3s;
+            -webkit-animation-iteration-count: infinite;
+                    animation-iteration-count: infinite;
             animation-direction: reverse;
-            animation-timing-function: ease-in-out;
+            -webkit-animation-timing-function: ease-in-out;
+                    animation-timing-function: ease-in-out;
         }
         
 
@@ -569,22 +707,34 @@
 
     #commission:not(.active) .fp-tableCell{
               
-        animation-name: fade-out-up;
-        animation-iteration-count: 1;             
-        animation-fill-mode: both;
-        animation-timing-function: ease-in-out;
-        animation-duration: 0.7s;
+        -webkit-animation-name: fade-out-up;
+              
+                animation-name: fade-out-up;
+        -webkit-animation-iteration-count: 1;
+                animation-iteration-count: 1;             
+        -webkit-animation-fill-mode: both;             
+                animation-fill-mode: both;
+        -webkit-animation-timing-function: ease-in-out;
+                animation-timing-function: ease-in-out;
+        -webkit-animation-duration: 0.7s;
+                animation-duration: 0.7s;
     }
 
 
 
     #commission.active .fp-tableCell{
-        animation-name: fade-in-up;
-        animation-iteration-count: 1;
-        animation-delay: 0.5s;
-        animation-fill-mode: forwards;
-        animation-timing-function: ease-in-out;
-        animation-duration: 1s;
+        -webkit-animation-name: fade-in-up;
+                animation-name: fade-in-up;
+        -webkit-animation-iteration-count: 1;
+                animation-iteration-count: 1;
+        -webkit-animation-delay: 0.5s;
+                animation-delay: 0.5s;
+        -webkit-animation-fill-mode: forwards;
+                animation-fill-mode: forwards;
+        -webkit-animation-timing-function: ease-in-out;
+                animation-timing-function: ease-in-out;
+        -webkit-animation-duration: 1s;
+                animation-duration: 1s;
     }
 
 
@@ -605,8 +755,13 @@
 
     @media(max-width:768px){
         #commission .con-max-width{
-            flex-direction: column;
-            align-items: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
         }
         #commission .iframe-box{
            
@@ -631,22 +786,34 @@
 
     #request-form:not(.active) .fp-tableCell{
               
-        animation-name: fade-out-up;
-        animation-iteration-count: 1;             
-        animation-fill-mode: both;
-        animation-timing-function: ease-in-out;
-        animation-duration: 0.7s;
+        -webkit-animation-name: fade-out-up;
+              
+                animation-name: fade-out-up;
+        -webkit-animation-iteration-count: 1;
+                animation-iteration-count: 1;             
+        -webkit-animation-fill-mode: both;             
+                animation-fill-mode: both;
+        -webkit-animation-timing-function: ease-in-out;
+                animation-timing-function: ease-in-out;
+        -webkit-animation-duration: 0.7s;
+                animation-duration: 0.7s;
     }
 
 
 
     #request-form.active .fp-tableCell{
-        animation-name: fade-in-up;
-        animation-iteration-count: 1;
-        animation-delay: 0.5s;
-        animation-fill-mode: forwards;
-        animation-timing-function: ease-in-out;
-        animation-duration: 1s;
+        -webkit-animation-name: fade-in-up;
+                animation-name: fade-in-up;
+        -webkit-animation-iteration-count: 1;
+                animation-iteration-count: 1;
+        -webkit-animation-delay: 0.5s;
+                animation-delay: 0.5s;
+        -webkit-animation-fill-mode: forwards;
+                animation-fill-mode: forwards;
+        -webkit-animation-timing-function: ease-in-out;
+                animation-timing-function: ease-in-out;
+        -webkit-animation-duration: 1s;
+                animation-duration: 1s;
     }
 
     #request-form .con{
@@ -661,6 +828,8 @@
         font-size: 1.5rem;
         font-weight: 300;
         word-break: keep-all;
+        -webkit-transition: font-size 0.5s;
+        -o-transition: font-size 0.5s;
         transition: font-size 0.5s;
       
     }
@@ -689,8 +858,12 @@
    
 
     #request-form .con > .text-box > ul > li > span{
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         font-weight: 400;
         color: #FFDA91;
     }
@@ -712,7 +885,10 @@
 
     @media(max-width: 768px){
         #request-form .con{
-            flex-direction: column;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
             margin: 0;
         }
 
@@ -759,29 +935,43 @@
     
     #contact:not(.active) .fp-tableCell{
               
-        animation-name: fade-out-up;
-        animation-iteration-count: 1;             
-        animation-fill-mode: both;
-        animation-timing-function: ease-in-out;
-        animation-duration: 0.7s;
+        -webkit-animation-name: fade-out-up;
+              
+                animation-name: fade-out-up;
+        -webkit-animation-iteration-count: 1;
+                animation-iteration-count: 1;             
+        -webkit-animation-fill-mode: both;             
+                animation-fill-mode: both;
+        -webkit-animation-timing-function: ease-in-out;
+                animation-timing-function: ease-in-out;
+        -webkit-animation-duration: 0.7s;
+                animation-duration: 0.7s;
     }
     
 
 
 
     #contact.active .fp-tableCell{
-        animation-name: fade-in-up;
-        animation-iteration-count: 1;
-        animation-delay: 0.5s;
-        animation-fill-mode: forwards;
-        animation-timing-function: ease-in-out;
-        animation-duration: 1s;
+        -webkit-animation-name: fade-in-up;
+                animation-name: fade-in-up;
+        -webkit-animation-iteration-count: 1;
+                animation-iteration-count: 1;
+        -webkit-animation-delay: 0.5s;
+                animation-delay: 0.5s;
+        -webkit-animation-fill-mode: forwards;
+                animation-fill-mode: forwards;
+        -webkit-animation-timing-function: ease-in-out;
+                animation-timing-function: ease-in-out;
+        -webkit-animation-duration: 1s;
+                animation-duration: 1s;
     }
 
     
 
     #contact div.con {
         margin-left: 50px;
+        -webkit-transition: font-size 0.5s;
+        -o-transition: font-size 0.5s;
         transition: font-size 0.5s;
     }
 
@@ -791,6 +981,8 @@
         border: 2px solid #B8B8B8;
         border-radius: 20px;
         background-color: transparent;
+        -webkit-transition: background-color 0.3s, color 0.3s;
+        -o-transition: background-color 0.3s, color 0.3s;
         transition: background-color 0.3s, color 0.3s;
     }
 
@@ -805,17 +997,26 @@
 
     @media (max-width: 768px){
         #contact .con-max-width{
-            flex-direction: column;
-            align-items: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
         }
 
         #contact .con-max-width > .title-box{
-            justify-content: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
         }
 
         #contact div.con{
             margin: 0;           
-            justify-content: center;
+            -webkit-box-pack: center;           
+                -ms-flex-pack: center;           
+                    justify-content: center;
         }
 
         #contact div.con > a{
@@ -858,6 +1059,8 @@
         footer .copy{
             letter-spacing: 5px;
             font-size: 1rem;
+            -webkit-transition: font-size 0.5s;
+            -o-transition: font-size 0.5s;
             transition: font-size 0.5s;
            
         }
@@ -874,6 +1077,8 @@
         footer .site > li>a{
             padding: 5px;
             opacity: 0.5;
+            -webkit-transition: opacity 0.3s;
+            -o-transition: opacity 0.3s;
             transition: opacity 0.3s;
         }
 
