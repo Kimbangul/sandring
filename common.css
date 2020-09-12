@@ -1022,6 +1022,10 @@
         margin: 0 3px;
     }
 
+    #contact div.slot > div.slot-list > ul > li.checked::before{
+        font-weight: 900;
+    }
+
     @media (max-width: 768px){
         #contact .con-max-width{
             -webkit-box-orient: vertical;
@@ -1051,14 +1055,6 @@
             padding: 15px 35px;
         }
 
-        /* #contact div.slot{
-            flex-direction: column;
-            
-        }
-
-        #contact div.slot > h5.title{
-            margin-bottom: 10px;
-        } */
 
         #contact div.slot > div.slot-list > ul > h6{
             width: 65px;
@@ -1073,6 +1069,11 @@
 
         #contact div.slot > div.slot-list > ul > h6{
             width: 55px;
+         }
+
+         #contact div.slot > h5.title{
+
+            margin-right: 10px;
          }
     }
 
