@@ -995,6 +995,33 @@
         background-color: #B8B8B8;
     }
 
+    #contact div.slot{
+        margin-top: 20px;
+        font-size: 2rem;        
+    }
+
+    #contact div.slot > h5.title{
+        font-size: 1em;
+        padding: 7px 10px;
+        color:  #242424;
+        background-color: #B8B8B8;
+        margin-right: 15px;
+        border-radius: 10px;
+    }
+
+    #contact div.slot > div.slot-list > ul > h6{
+       width: 80px;
+    }
+
+    #contact div.slot > div.slot-list > ul > li::before{
+        content:"\f0c8";
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 500;
+        display: inline-block;
+        font-size: 1em;
+        margin: 0 3px;
+    }
+
     @media (max-width: 768px){
         #contact .con-max-width{
             -webkit-box-orient: vertical;
@@ -1023,6 +1050,19 @@
             text-align: center;
             padding: 15px 35px;
         }
+
+        /* #contact div.slot{
+            flex-direction: column;
+            
+        }
+
+        #contact div.slot > h5.title{
+            margin-bottom: 10px;
+        } */
+
+        #contact div.slot > div.slot-list > ul > h6{
+            width: 65px;
+         }
     }
 
     @media (max-width: 550px){
@@ -1030,6 +1070,10 @@
         #contact div.con > a{            
             padding: 15px 27px;
         }
+
+        #contact div.slot > div.slot-list > ul > h6{
+            width: 55px;
+         }
     }
 
     /* 컨택 끝 */
