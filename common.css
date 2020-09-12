@@ -1026,6 +1026,12 @@
         font-weight: 900;
     }
 
+    #contact div.comment {
+        text-align: center;
+        font-size: 1.6rem;
+        margin-top: 15px;
+    }
+
     @media (max-width: 768px){
         #contact .con-max-width{
             -webkit-box-orient: vertical;
