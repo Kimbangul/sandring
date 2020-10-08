@@ -977,6 +977,7 @@
 
     #contact div.con > a{
         padding: 20px 30px;
+        text-align: center;
         font-size: 2.3rem;
         border: 2px solid #B8B8B8;
         border-radius: 20px;
